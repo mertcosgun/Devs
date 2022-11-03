@@ -5,22 +5,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "languages")
-public class Language {
+@Table(name = "technologies")
+public class Technology {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "name", nullable = false, unique = true, length = 70)
+    @Column(name = "name", nullable = false, length = 70, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
-    private List<Technology> technologies;
+    @ManyToOne(targetEntity = Language.class)
+    @JoinColumn(name = "language_id")
+    private Language language;
 }

@@ -46,7 +46,6 @@ public class LanguageManager implements LanguageService {
     @Override
     public List<LanguagesResponse> getAll() {
         List<Language> languages = languageRepository.findAll();
-//        List<LanguagesResponse> languagesResponses = new ArrayList<>();
         return languages.stream().map(language -> new LanguagesResponse(language.getId(), language.getName())).toList();
     }
 
