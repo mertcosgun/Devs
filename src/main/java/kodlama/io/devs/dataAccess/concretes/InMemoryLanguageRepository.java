@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
-public class InMemoryLanguageRepository implements LanguageRepository {
+/**
+ * Artık bu sınıfı kullanamayacağız bu sınıfın implemente ettiği interface JpaRepository
+ * üzerinden extends edildiği için bu sınıf geçersiz kaldı
+ */
+public class InMemoryLanguageRepository {
 
     List<Language> languages;
 
@@ -21,30 +24,30 @@ public class InMemoryLanguageRepository implements LanguageRepository {
         languages.add(new Language(5, "Dart"));
     }
 
-    @Override
+//    @Override
     public Language add(Language language) {
         languages.add(language);
         return language;
     }
 
-    @Override
+//    @Override
     public List<Language> getAll() {
         return languages;
     }
 
-    @Override
+//    @Override
     public Language getById(int id) {
         return languages.stream().filter(language -> language.getId() == id).findFirst().orElse(null);
     }
 
-    @Override
+//    @Override
     public Language update(Language language) {
         Language lang = getById(language.getId());
         lang.setName(language.getName());
         return lang;
     }
 
-    @Override
+//    @Override
     public boolean delete(int id) {
        return languages.removeIf(language -> language.getId() == id);
     }

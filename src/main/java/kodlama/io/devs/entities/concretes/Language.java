@@ -1,48 +1,22 @@
 package kodlama.io.devs.entities.concretes;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "languages")
 public class Language {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name", nullable = false, unique = true, length = 70)
     private String name;
-
-    public Language() {
-    }
-
-    public Language(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//
-//        Language language = (Language) o;
-//
-//        if (id != language.id) return false;
-//        return name.equals(language.name);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = id;
-//        result = 1923 * result + name.hashCode();
-//        return result;
-//    }
 }
