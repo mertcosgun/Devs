@@ -14,8 +14,8 @@
 
 ### 2.  Sisteme programlama dillerine ait alt teknolojiler eklenebilmeli, silinebilmeli. güncellenebilmeli, listelenebilmelidir.
   Örneğin:
-  - Java : Spring, JSP
-  - C#: WPF, ASP.NET
-  - JavaScript : Vue, React
+  - Java : <i>Spring, JSP</i>
+  - C#: <i>WPF, ASP.NET</i>
+  - JavaScript : <i>Vue, React</i>
 
 </br>
