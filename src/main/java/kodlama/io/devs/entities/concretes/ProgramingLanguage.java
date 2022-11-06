@@ -11,8 +11,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "languages")
-public class Language {
+@Table(name = "programing_languages")
+public class ProgramingLanguage {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,6 @@ public class Language {
     @Column(name = "name", nullable = false, unique = true, length = 70)
     private String name;
 
-    @OneToMany(mappedBy = "language", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "programingLanguage", cascade = CascadeType.ALL)
     private List<Technology> technologies;
 }

@@ -20,7 +20,7 @@ public class Technology {
     @Column(name = "name", nullable = false, length = 70, unique = true)
     private String name;
 
-    @ManyToOne(targetEntity = Language.class)
+    @ManyToOne(targetEntity = ProgramingLanguage.class)
     @JoinColumn(name = "language_id")
-    private Language language;
+    private ProgramingLanguage programingLanguage;
 }

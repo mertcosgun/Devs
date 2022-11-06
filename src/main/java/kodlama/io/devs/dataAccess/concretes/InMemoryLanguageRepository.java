@@ -1,8 +1,6 @@
 package kodlama.io.devs.dataAccess.concretes;
 
-import kodlama.io.devs.dataAccess.abstracts.LanguageRepository;
-import kodlama.io.devs.entities.concretes.Language;
-import org.springframework.stereotype.Repository;
+import kodlama.io.devs.entities.concretes.ProgramingLanguage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +11,10 @@ import java.util.List;
  */
 public class InMemoryLanguageRepository {
 
-    List<Language> languages;
+    List<ProgramingLanguage> programingLanguages;
 
     public InMemoryLanguageRepository() {
-        languages = new ArrayList<>();
+        programingLanguages = new ArrayList<>();
         /*languages.add(new Language(1, "Assembly"));
         languages.add(new Language(2, "C#"));
         languages.add(new Language(3, "Java"));
@@ -25,31 +23,31 @@ public class InMemoryLanguageRepository {
     }
 
 //    @Override
-    public Language add(Language language) {
-        languages.add(language);
-        return language;
+    public ProgramingLanguage add(ProgramingLanguage programingLanguage) {
+        programingLanguages.add(programingLanguage);
+        return programingLanguage;
     }
 
 //    @Override
-    public List<Language> getAll() {
-        return languages;
+    public List<ProgramingLanguage> getAll() {
+        return programingLanguages;
     }
 
 //    @Override
-    public Language getById(int id) {
-        return languages.stream().filter(language -> language.getId() == id).findFirst().orElse(null);
+    public ProgramingLanguage getById(int id) {
+        return programingLanguages.stream().filter(language -> language.getId() == id).findFirst().orElse(null);
     }
 
 //    @Override
-    public Language update(Language language) {
-        Language lang = getById(language.getId());
-        lang.setName(language.getName());
+    public ProgramingLanguage update(ProgramingLanguage programingLanguage) {
+        ProgramingLanguage lang = getById(programingLanguage.getId());
+        lang.setName(programingLanguage.getName());
         return lang;
     }
 
 //    @Override
     public boolean delete(int id) {
-       return languages.removeIf(language -> language.getId() == id);
+       return programingLanguages.removeIf(language -> language.getId() == id);
     }
 
 }
